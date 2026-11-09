@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,8 +56,93 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
     <style>
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw;
+    }
+
+    .clients-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    .clients-marquee-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .clients-marquee-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+      padding: 4px 0;
+    }
+    .clients-marquee-track {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 16px !important;
+      width: max-content !important;
+      will-change: transform;
+    }
+    .clients-marquee-track.track-left {
+      animation: clients-scroll-left 42s linear infinite !important;
+    }
+    .clients-marquee-track.track-right {
+      animation: clients-scroll-right 45s linear infinite !important;
+    }
+    .clients-marquee-wrapper:hover .clients-marquee-track {
+      animation-play-state: paused !important;
+    }
+    @keyframes clients-scroll-left {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    @keyframes clients-scroll-right {
+      0% { transform: translate3d(-50%, 0, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+    .client-marquee-item {
+      width: 180px !important;
+      min-width: 180px !important;
+      max-width: 180px !important;
+      flex: 0 0 180px !important;
+    }
+    .client-marquee-item .client-logo-card {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .client-marquee-item .client-logo-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 193, 7, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+    .client-marquee-item .client-logo-img {
+      max-height: 44px;
+      width: auto;
+      max-width: 90%;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.8);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .client-marquee-item .client-logo-card:hover .client-logo-img {
+      filter: grayscale(0%) opacity(1);
+      transform: scale(1.06);
+    }
+
     .portfolio-marquee-wrapper {
       position: relative;
       width: 100%;
@@ -187,7 +272,32 @@
       50% { transform: scale(1.3); opacity: 1; }
       100% { transform: scale(0.9); opacity: 0.7; }
     }
+
     @media (max-width: 768px) {
+      .client-marquee-item {
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+        flex: 0 0 140px !important;
+      }
+      .client-marquee-item .client-logo-card {
+        height: 58px;
+        padding: 8px 12px;
+        border-radius: 10px;
+      }
+      .client-marquee-item .client-logo-img {
+        max-height: 32px;
+      }
+      .clients-marquee-track {
+        gap: 12px !important;
+      }
+      .clients-marquee-track.track-left {
+        animation-duration: 30s !important;
+      }
+      .clients-marquee-track.track-right {
+        animation-duration: 32s !important;
+      }
+
       .portfolio-marquee-item {
         width: 290px !important;
         min-width: 290px !important;
@@ -200,6 +310,34 @@
       .portfolio-marquee-track {
         gap: 18px !important;
         animation-duration: 35s !important;
+      }
+
+      /* Mobile General Responsiveness */
+      .py-section {
+        padding-top: clamp(2.5rem, 6vw, 4rem) !important;
+        padding-bottom: clamp(2.5rem, 6vw, 4rem) !important;
+      }
+      .about-image-wrapper {
+        min-height: 240px !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .stats-horizontal-inline {
+        margin-top: 1.5rem !important;
+        padding-top: 1rem !important;
+      }
+      .stat-number {
+        font-size: 1.8rem !important;
+      }
+      .stat-plus {
+        font-size: 1.2rem !important;
+      }
+      .stat-label {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.05em !important;
+      }
+      .stat-divider {
+        height: 30px !important;
+        margin: 0 4px !important;
       }
     }
     </style>
@@ -485,7 +623,7 @@
             </div>
         </div>
     </section>
-    <section class="about-section py-section d-none d-md-block position-relative overflow-hidden" id="about">
+    <section class="about-section py-section position-relative overflow-hidden" id="about">
         <div class="about-bg-shape" aria-hidden="true">
             <img src="storage/background shape/background2.webp" alt="" class="about-bg-shape-img" loading="lazy" decoding="async">
         </div>
@@ -610,6 +748,319 @@
                             </div>
         </div>
         <div class="diagonal-divider divider-right"></div>
+    </section>
+
+    <section class="clients-section py-section position-relative overflow-hidden" id="clients">
+        <div class="container position-relative z-2">
+
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-6">
+                    <span class="section-subtitle d-block mb-2">Terpercaya &amp; Berpengalaman</span>
+                    <h2 class="hero-title headline-kinetic display-6 fw-bold">
+                        <span class="word">Kemitraan &amp;</span><br>
+                        <span class="word accent-text">Kepercayaan Klien</span>
+                    </h2>
+                </div>
+                <div class="col-lg-6 mt-3 mt-lg-0">
+                    <p class="text-muted lead mb-0">
+                        Kami bangga dapat berkolaborasi dengan berbagai brand terkemuka, institusi, dan startup visioner dalam menghadirkan ekosistem digital kelas dunia.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="clients-marquee-container position-relative z-2">
+            <div class="clients-marquee-wrapper mb-3">
+                <div class="clients-marquee-track track-left">
+                                                                        <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/7NXCPE90BJS2ZJYWAmCjnydCsil9341vmmBa3gOG.webp" alt="IQOS" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wmJP69e00l6GUt6mDJwzPnYGlrQwkTjb3sMjJ0TF.webp" alt="WILMAR" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4tJK5SJAM1z3Zm82CTelcrlLgJ1TYYR7xUopYxUa.webp" alt="L&#039;OREAL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/xWlwUTy0zbdF0jzNH80GjBvcZNkGvmK362UHYjt3.webp" alt="SHISEIDO" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/lHmPE1sVmjKmxhK83T2Mv60h20mtCDXMSMpZ4izM.webp" alt="PIGEON" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/BehEqs6crXmhYncWPfpNPnOUAQTaflFFnxPGDEMh.webp" alt="YSL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/guaGGHW5P5wYo48u67OCWgg2TVOsY0KBo4Fe4fuS.webp" alt="SANIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/NtQmyBbKXpjcVSAhk2fYrVBfb4OyJVclZN41WIrU.webp" alt="DOMPET DHUAFA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/VgtFzgsOgWtWQbIO2fV5iaYx2BqO2C1yOyhr7e0V.webp" alt="PLAN INDONESIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/pnZQoHEGN3yrOZwJhUCHkB2sTDuvYL7dmI8Sut1Y.webp" alt="PINJAMIN" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/g0QLLVmwMRyqrH2kadE8KCxPikjzrVqfuNoc7zJc.webp" alt="FINANKU" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/udL0cgilkXD7Yw5ogqLRXTXObPRty0BKqhJU5tDu.webp" alt="MULTIBANGUN PATRIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wIvA15XJZ4lfM9nhqfWFkeIIb9eo8apcy8rzfF5f.webp" alt="AMETHYST SUITES" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TWlP8gEib80IM6fPksWwveHWxBbUphtOVJb9K6N8.webp" alt="LOGISALL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                                                                <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/7NXCPE90BJS2ZJYWAmCjnydCsil9341vmmBa3gOG.webp" alt="IQOS" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wmJP69e00l6GUt6mDJwzPnYGlrQwkTjb3sMjJ0TF.webp" alt="WILMAR" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4tJK5SJAM1z3Zm82CTelcrlLgJ1TYYR7xUopYxUa.webp" alt="L&#039;OREAL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/xWlwUTy0zbdF0jzNH80GjBvcZNkGvmK362UHYjt3.webp" alt="SHISEIDO" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/lHmPE1sVmjKmxhK83T2Mv60h20mtCDXMSMpZ4izM.webp" alt="PIGEON" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/BehEqs6crXmhYncWPfpNPnOUAQTaflFFnxPGDEMh.webp" alt="YSL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/guaGGHW5P5wYo48u67OCWgg2TVOsY0KBo4Fe4fuS.webp" alt="SANIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/NtQmyBbKXpjcVSAhk2fYrVBfb4OyJVclZN41WIrU.webp" alt="DOMPET DHUAFA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/VgtFzgsOgWtWQbIO2fV5iaYx2BqO2C1yOyhr7e0V.webp" alt="PLAN INDONESIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/pnZQoHEGN3yrOZwJhUCHkB2sTDuvYL7dmI8Sut1Y.webp" alt="PINJAMIN" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/g0QLLVmwMRyqrH2kadE8KCxPikjzrVqfuNoc7zJc.webp" alt="FINANKU" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/udL0cgilkXD7Yw5ogqLRXTXObPRty0BKqhJU5tDu.webp" alt="MULTIBANGUN PATRIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wIvA15XJZ4lfM9nhqfWFkeIIb9eo8apcy8rzfF5f.webp" alt="AMETHYST SUITES" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TWlP8gEib80IM6fPksWwveHWxBbUphtOVJb9K6N8.webp" alt="LOGISALL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+
+            <div class="clients-marquee-wrapper">
+                <div class="clients-marquee-track track-right">
+                                                                        <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/IjequHH1frJCXWaEpDGrWyWkmoUJ4X6BJUADLmxi.webp" alt="KINGSTON SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/OzPL99SMTWElV6skxF7DnATTQC2XVnKrqpDFbvhu.webp" alt="KLINIK MEDIKA PUTRA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/rrFLB8H6RhcpF0227o7vBzUqRlqKT75hRgvEVrxC.webp" alt="ADITYA MEDICAL CENTRE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/MSeaefIwtfTL0nAMdEO9NZ5Xp7Vq9wOG9BtEUWOR.webp" alt="REHABILITASI AKUATIK" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/mat18SIbeFwqPRe9ucdPs8pFoTJXIgYeqXOuyFvn.webp" alt="BIZSQUARE SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/eiwOVocFxj3PKorU9MKOMbhVY3LVuPKrmlpfUNyp.webp" alt="MASOEM UNIVERSITY" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4j9y516P7jDhzBUgIaiJgy2cUCSb9fy8WVPBk9rU.webp" alt="SMK STRADA JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TAE0w1vCieSineXxobAMaBqVPGgQQBejoANl8Mr5.webp" alt="SMKN 8 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/ZzlKRYl4hNe50DT7jYFNNyD4LAvtPjunARrlVNKf.webp" alt="SMKN 6 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/Y0FQxEC85Wy2QPNMFtiCWmbjL91utb9g6OPzArV4.webp" alt="SMK AS-SYAFIIYAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/i5GoEq6CVAKk1KWSkdnwRF38um7bLETapTsxu658.webp" alt="SMKN 2 BALEENDAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/S7Oqhl9C0UBHq7GGIW6Px4AlqFMqLXMN3W0NJLbT.webp" alt="BUNDA MULIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/gaELWgz0y65vYH4vuTi3YKmG2a9tMtR6HSPWnFpr.webp" alt="KEBAB DHABI" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/16MRqsrd5RcnoGxD5yVPdgPD1eiGqoivzGNRwkjy.webp" alt="KARALIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                                                                <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/IjequHH1frJCXWaEpDGrWyWkmoUJ4X6BJUADLmxi.webp" alt="KINGSTON SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/OzPL99SMTWElV6skxF7DnATTQC2XVnKrqpDFbvhu.webp" alt="KLINIK MEDIKA PUTRA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/rrFLB8H6RhcpF0227o7vBzUqRlqKT75hRgvEVrxC.webp" alt="ADITYA MEDICAL CENTRE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/MSeaefIwtfTL0nAMdEO9NZ5Xp7Vq9wOG9BtEUWOR.webp" alt="REHABILITASI AKUATIK" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/mat18SIbeFwqPRe9ucdPs8pFoTJXIgYeqXOuyFvn.webp" alt="BIZSQUARE SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/eiwOVocFxj3PKorU9MKOMbhVY3LVuPKrmlpfUNyp.webp" alt="MASOEM UNIVERSITY" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4j9y516P7jDhzBUgIaiJgy2cUCSb9fy8WVPBk9rU.webp" alt="SMK STRADA JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TAE0w1vCieSineXxobAMaBqVPGgQQBejoANl8Mr5.webp" alt="SMKN 8 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/ZzlKRYl4hNe50DT7jYFNNyD4LAvtPjunARrlVNKf.webp" alt="SMKN 6 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/Y0FQxEC85Wy2QPNMFtiCWmbjL91utb9g6OPzArV4.webp" alt="SMK AS-SYAFIIYAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/i5GoEq6CVAKk1KWSkdnwRF38um7bLETapTsxu658.webp" alt="SMKN 2 BALEENDAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/S7Oqhl9C0UBHq7GGIW6Px4AlqFMqLXMN3W0NJLbT.webp" alt="BUNDA MULIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/gaELWgz0y65vYH4vuTi3YKmG2a9tMtR6HSPWnFpr.webp" alt="KEBAB DHABI" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/16MRqsrd5RcnoGxD5yVPdgPD1eiGqoivzGNRwkjy.webp" alt="KARALIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+        </div>
     </section>
 
     <section class="portfolio-section py-section position-relative overflow-hidden" id="work">
