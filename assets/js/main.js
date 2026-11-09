@@ -121,18 +121,19 @@ function initAnimations() {
     ease: 'power3.out'
   });
 
-  gsap.utils.toArray('.portfolio-item').forEach(item => {
-    gsap.from(item, {
+  const marqueeWrapper = document.querySelector('.portfolio-marquee-wrapper');
+  if (marqueeWrapper) {
+    gsap.from(marqueeWrapper, {
       scrollTrigger: {
-        trigger: item,
+        trigger: marqueeWrapper,
         start: 'top 85%'
       },
       y: 40,
       opacity: 0,
-      duration: 0.8,
+      duration: 1,
       ease: 'power3.out'
     });
-  });
+  }
 }
 
 function initPortfolioFilter() {
