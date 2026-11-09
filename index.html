@@ -56,7 +56,153 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <style>
+    .portfolio-marquee-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 16px 0 28px 0;
+      mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    }
+    .portfolio-marquee-track {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: stretch !important;
+      gap: 28px !important;
+      width: max-content !important;
+      animation: portfolio-marquee-glide 48s linear infinite !important;
+      will-change: transform;
+    }
+    .portfolio-marquee-wrapper:hover .portfolio-marquee-track {
+      animation-play-state: paused !important;
+    }
+    @keyframes portfolio-marquee-glide {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    .portfolio-marquee-item {
+      width: 370px !important;
+      min-width: 370px !important;
+      max-width: 370px !important;
+      flex: 0 0 370px !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .portfolio-marquee-item .project-card {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
+    }
+    .portfolio-marquee-item .project-img-wrapper {
+      width: 100% !important;
+      height: 250px !important;
+      border-radius: 14px !important;
+      overflow: hidden !important;
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: transparent !important;
+    }
+    .portfolio-marquee-item .device-desktop {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      background: #141418 !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    }
+    .portfolio-marquee-item .browser-header {
+      height: 24px !important;
+      background: #1e1e24 !important;
+      padding: 0 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      flex-shrink: 0 !important;
+    }
+    .portfolio-marquee-item .browser-header .dot {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+    }
+    .portfolio-marquee-item .browser-header .dot.red { background: #ff5f56 !important; }
+    .portfolio-marquee-item .browser-header .dot.yellow { background: #ffbd2e !important; }
+    .portfolio-marquee-item .browser-header .dot.green { background: #27c93f !important; }
+    .portfolio-marquee-item .device-desktop .portfolio-img {
+      width: 100% !important;
+      height: calc(100% - 24px) !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      display: block !important;
+    }
+    .portfolio-marquee-item .device-mobile {
+      width: 135px !important;
+      height: 94% !important;
+      background: #000 !important;
+      border-radius: 18px !important;
+      border: 4px solid #1c1c20 !important;
+      position: relative !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+      overflow: hidden !important;
+      flex-shrink: 0 !important;
+      margin: 0 auto !important;
+    }
+    .portfolio-marquee-item .device-mobile .portfolio-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      display: block !important;
+    }
+    .portfolio-marquee-item .project-info {
+      margin-top: 14px !important;
+    }
+    .portfolio-marquee-item .project-title {
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 3px !important;
+    }
+    .portfolio-badge-pill {
+      background: rgba(0, 0, 0, 0.04) !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffc107;
+      box-shadow: 0 0 8px rgba(255, 193, 7, 0.8);
+      animation: pulse-glow 2s infinite;
+    }
+    @keyframes pulse-glow {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.7; }
+    }
+    @media (max-width: 768px) {
+      .portfolio-marquee-item {
+        width: 290px !important;
+        min-width: 290px !important;
+        max-width: 290px !important;
+        flex: 0 0 290px !important;
+      }
+      .portfolio-marquee-item .project-img-wrapper {
+        height: 200px !important;
+      }
+      .portfolio-marquee-track {
+        gap: 18px !important;
+        animation-duration: 35s !important;
+      }
+    }
+    </style>
 </head>
 <body>
 
