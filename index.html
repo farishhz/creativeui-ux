@@ -55,13 +55,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/style.css?v=5">
+    <link rel="stylesheet" href="assets/css/style.css?v=7">
     <style>
     html, body {
       overflow-x: hidden !important;
       max-width: 100vw;
     }
 
+    .advantages-section,
     .services-section,
     .clients-section,
     .portfolio-section,
@@ -284,23 +285,6 @@
       font-size: 1.05rem !important;
       font-weight: 700 !important;
       margin-bottom: 3px !important;
-    }
-    .portfolio-badge-pill {
-      background: rgba(0, 0, 0, 0.04) !important;
-      border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    }
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ffc107;
-      box-shadow: 0 0 8px rgba(255, 193, 7, 0.8);
-      animation: pulse-glow 2s infinite;
-    }
-    @keyframes pulse-glow {
-      0% { transform: scale(0.9); opacity: 0.7; }
-      50% { transform: scale(1.3); opacity: 1; }
-      100% { transform: scale(0.9); opacity: 0.7; }
     }
 
     @media (max-width: 768px) {
@@ -1097,15 +1081,10 @@
         </div>
 
         <div class="container position-relative z-2">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+            <div class="mb-4">
                 <div class="section-header">
                     <span class="section-subtitle d-block">Portofolio Pilihan</span>
                     <h2 class="section-title mb-0">Website &amp; <span class="accent-text">Aplikasi.</span></h2>
-                </div>
-
-                <div class="portfolio-badge-pill d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill">
-                    <span class="pulse-dot"></span>
-                    <span class="small text-muted fw-semibold">Sorot kursor untuk jeda</span>
                 </div>
             </div>
         </div>
@@ -1557,6 +1536,236 @@
             </a>
         </div>
     </section>
+
+<section class="advantages-section py-section position-relative overflow-hidden" id="keunggulan">
+    <div class="advantages-bg-shape" aria-hidden="true">
+        <img src="storage/background shape/background4.webp" alt="" class="advantages-bg-shape-img" loading="lazy" decoding="async">
+    </div>
+
+    <div class="container position-relative z-2">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-7">
+                <span class="section-subtitle d-block mb-2">KENAPA MEMILIH KAMI</span>
+                <h2 class="section-title mb-0">
+                    KEUNGGULAN <span class="accent-text">RUBICWEB.</span>
+                </h2>
+            </div>
+            <div class="col-lg-5 mt-3 mt-lg-0">
+                <p class="text-muted lead mb-0">
+                    Standar rekayasa digital berkinerja tinggi, infrastruktur cloud super cepat, dan garansi penuh tanpa kompromi untuk memastikan website Anda menjadi aset bisnis yang menghasilkan.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4 bento-grid">
+
+            <div class="col-lg-7">
+                <div class="bento-card bento-speed h-100 p-4 p-md-5 d-flex flex-column justify-content-between position-relative overflow-hidden">
+                    <div class="bento-card-header mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                            <span class="bento-badge badge-green">
+                                <i class="bx bxs-zap me-1"></i> Core Web Vitals Validated
+                            </span>
+                            <span class="bento-number text-muted fw-bold">01</span>
+                        </div>
+                        <h3 class="bento-title h4 fw-bold mb-2">Skor Kecepatan 95+ (Lighthouse / PageSpeed)</h3>
+                        <p class="bento-desc text-muted mb-0">
+                            Arsitektur kode presisi tanpa render-blocking CSS/JS, optimasi WebP otomatis, dan lazy loading cerdas. Website Anda memuat instan di bawah 1.2 detik di mobile maupun desktop.
+                        </p>
+                    </div>
+
+                    <div class="bento-speed-widget p-3 p-md-4 rounded-4 mt-3">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-6 col-sm-3 text-center">
+                                <div class="speed-circle mx-auto">
+                                    <svg viewBox="0 0 36 36" class="circular-chart green">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="circle" stroke-dasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <text x="18" y="20.5" class="percentage">98</text>
+                                    </svg>
+                                </div>
+                                <span class="small d-block fw-semibold mt-2">Performance</span>
+                            </div>
+
+                            <div class="col-6 col-sm-3 text-center">
+                                <div class="speed-circle mx-auto">
+                                    <svg viewBox="0 0 36 36" class="circular-chart green">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <text x="18" y="20.5" class="percentage">100</text>
+                                    </svg>
+                                </div>
+                                <span class="small d-block fw-semibold mt-2">Accessibility</span>
+                            </div>
+
+                            <div class="col-6 col-sm-3 text-center">
+                                <div class="speed-circle mx-auto">
+                                    <svg viewBox="0 0 36 36" class="circular-chart green">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <text x="18" y="20.5" class="percentage">100</text>
+                                    </svg>
+                                </div>
+                                <span class="small d-block fw-semibold mt-2">Best Practices</span>
+                            </div>
+
+                            <div class="col-6 col-sm-3 text-center">
+                                <div class="speed-circle mx-auto">
+                                    <svg viewBox="0 0 36 36" class="circular-chart green">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <text x="18" y="20.5" class="percentage">100</text>
+                                    </svg>
+                                </div>
+                                <span class="small d-block fw-semibold mt-2">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="bento-card bento-seo h-100 p-4 p-md-5 d-flex flex-column justify-content-between position-relative overflow-hidden">
+                    <div class="bento-card-header mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                            <span class="bento-badge badge-yellow">
+                                <i class="bx bx-trending-up me-1"></i> #1 Search Potential
+                            </span>
+                            <span class="bento-number text-muted fw-bold">02</span>
+                        </div>
+                        <h3 class="bento-title h4 fw-bold mb-2">SEO-Ready &amp; Terindeks Google Cepat</h3>
+                        <p class="bento-desc text-muted mb-0">
+                            Struktur semantik HTML5 standar W3C, integrasi Schema.org JSON-LD, sitemap XML otomatis, serta meta tags Open Graph lengkap untuk mendominasi kata kunci bisnis Anda.
+                        </p>
+                    </div>
+
+                    <div class="bento-serp-preview p-3 rounded-4 mt-3">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="serp-favicon"><i class="bx bx-globe"></i></span>
+                            <div class="serp-url-group">
+                                <span class="serp-site fw-semibold">Rubicweb Client</span>
+                                <span class="serp-url d-block text-muted">https://bisnisanda.com &rsaquo; layanan</span>
+                            </div>
+                        </div>
+                        <h4 class="serp-title text-primary fw-bold mb-1">Solusi Jasa Pembuatan Website Terbaik &amp; Terpercaya</h4>
+                        <p class="serp-snippet text-muted small mb-2">
+                            Website profesional berkecepatan tinggi dengan garansi purna jual 100%. Tingkatkan konversi penjualan bisnis Anda bersama Rubicweb...
+                        </p>
+                        <div class="d-flex align-items-center gap-2 serp-rating">
+                            <div class="text-warning small">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <span class="small text-muted fw-semibold">4.9 (150+ Ulasan Klien)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="bento-card bento-hosting h-100 p-4 p-md-5 d-flex flex-column justify-content-between position-relative overflow-hidden">
+                    <div class="bento-card-header mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                            <span class="bento-badge badge-blue">
+                                <i class="bx bx-gift me-1"></i> Paket All-In-One
+                            </span>
+                            <span class="bento-number text-muted fw-bold">03</span>
+                        </div>
+                        <h3 class="bento-title h4 fw-bold mb-2">Gratis Domain .com + Cloud Hosting 1 Tahun</h3>
+                        <p class="bento-desc text-muted mb-0">
+                            Anda siap terima beres tanpa biaya tersembunyi. Termasuk nama domain pilihan, server SSD NVMe berkecepatan tinggi, dan sertifikat SSL HTTPS aktif seumur hidup.
+                        </p>
+                    </div>
+
+                    <div class="bento-features-list mt-3">
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                            <li class="d-flex align-items-center gap-2">
+                                <span class="feat-check"><i class="bx bx-check"></i></span>
+                                <span class="fw-semibold small">Gratis Domain .com / .co.id Pilihan</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2">
+                                <span class="feat-check"><i class="bx bx-check"></i></span>
+                                <span class="fw-semibold small">High-Speed NVMe Cloud Server</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2">
+                                <span class="feat-check"><i class="bx bx-check"></i></span>
+                                <span class="fw-semibold small">Free SSL Certificate (HTTPS) Terpasang</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2">
+                                <span class="feat-check"><i class="bx bx-check"></i></span>
+                                <span class="fw-semibold small">Automated Weekly Cloud Backup</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="bento-card bento-support h-100 p-4 p-md-5 d-flex flex-column justify-content-between position-relative overflow-hidden">
+                    <div class="bento-card-header mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                            <span class="bento-badge badge-purple">
+                                <i class="bx bx-shield-quarter me-1"></i> 100% Bebas Risiko
+                            </span>
+                            <span class="bento-number text-muted fw-bold">04</span>
+                        </div>
+                        <h3 class="bento-title h4 fw-bold mb-2">Full Support &amp; Garansi Maintenance Tanpa Khawatir</h3>
+                        <p class="bento-desc text-muted mb-0">
+                            Kami selalu mendampingi bisnis Anda setelah website online. Layanan purna jual mencakup perbaikan bug gratis, video panduan admin, konsultasi teknis, dan pemeliharaan berkala.
+                        </p>
+                    </div>
+
+                    <div class="bento-support-grid mt-3">
+                        <div class="row g-2">
+                            <div class="col-sm-6">
+                                <div class="support-item-pill p-3 rounded-3 d-flex align-items-center gap-3">
+                                    <div class="support-icon-wrap"><i class="bx bx-time-five"></i></div>
+                                    <div>
+                                        <h5 class="h6 mb-0 fw-bold">99.9% Uptime SLA</h5>
+                                        <span class="text-muted small">Server prima tanpa downtime</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="support-item-pill p-3 rounded-3 d-flex align-items-center gap-3">
+                                    <div class="support-icon-wrap"><i class="bx bx-check-shield"></i></div>
+                                    <div>
+                                        <h5 class="h6 mb-0 fw-bold">Garansi Bug 100%</h5>
+                                        <span class="text-muted small">Perbaikan error tanpa biaya</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="support-item-pill p-3 rounded-3 d-flex align-items-center gap-3">
+                                    <div class="support-icon-wrap"><i class="bx bx-video"></i></div>
+                                    <div>
+                                        <h5 class="h6 mb-0 fw-bold">Video Panduan Admin</h5>
+                                        <span class="text-muted small">Mudah kelola konten mandiri</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="support-item-pill p-3 rounded-3 d-flex align-items-center gap-3">
+                                    <div class="support-icon-wrap"><i class="bx bxl-whatsapp"></i></div>
+                                    <div>
+                                        <h5 class="h6 mb-0 fw-bold">Dukungan WhatsApp</h5>
+                                        <span class="text-muted small">Respon cepat via direct chat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="diagonal-divider divider-right"></div>
+</section>
 
     <section class="cta-section py-section text-center position-relative overflow-hidden" id="contact">
 
