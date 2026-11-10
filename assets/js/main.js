@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initPortfolioFilter();
   initMagneticButtons();
-  initClientsSwiper();
+  initMarqueePerformance();
   initHeroPerson();
   initStatsCounter();
 });
@@ -63,7 +63,7 @@ function initNavigation() {
     } else {
       navbar.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
 
   if (menuToggle && mobileOverlay) {
     menuToggle.addEventListener('click', () => {
@@ -196,51 +196,41 @@ function initMagneticButtons() {
   }
 }
 
-function initClientsSwiper() {
-  const container = document.querySelector('.clients-grid-swiper');
-  if (!container || typeof Swiper === 'undefined') return;
+function initMarqueePerformance() {
+  const wrappers = document.querySelectorAll('.clients-marquee-wrapper, .portfolio-marquee-wrapper');
+  if (!wrappers.length) return;
 
-  new Swiper('.clients-grid-swiper', {
-    slidesPerView: 2, // Mobile (<576px): 2 logo x 2 baris = 4 logo per slide
-    grid: {
-      rows: 2,
-      fill: 'row',
-    },
-    spaceBetween: 10,
-    pagination: {
-      el: '.clients-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.clients-next',
-      prevEl: '.clients-prev',
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 3, // Tablet kecil: 3 logo x 2 baris = 6 logo
-        grid: {
-          rows: 2,
-          fill: 'row',
-        },
-        spaceBetween: 12,
-      },
-      768: {
-        slidesPerView: 4, // Tablet / Laptop kecil: 4 logo x 2 baris = 8 logo
-        grid: {
-          rows: 2,
-          fill: 'row',
-        },
-        spaceBetween: 12,
-      },
-      1024: {
-        slidesPerView: 6, // Desktop (>=1024px): 6 logo x 2 baris = 12 logo per slide
-        grid: {
-          rows: 2,
-          fill: 'row',
-        },
-        spaceBetween: 12, // Spasi rapat dan rapi
-      }
-    }
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const tracks = entry.target.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+        tracks.forEach(track => {
+          track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        });
+      });
+    }, {
+      rootMargin: '100px 0px 100px 0px',
+      threshold: 0
+    });
+
+    wrappers.forEach(w => observer.observe(w));
+  }
+
+  wrappers.forEach(w => {
+    w.addEventListener('touchstart', () => {
+      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+      tracks.forEach(t => t.style.animationPlayState = 'paused');
+    }, { passive: true });
+
+    w.addEventListener('touchend', () => {
+      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+      tracks.forEach(t => t.style.animationPlayState = 'running');
+    }, { passive: true });
+
+    w.addEventListener('touchcancel', () => {
+      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+      tracks.forEach(t => t.style.animationPlayState = 'running');
+    }, { passive: true });
   });
 }
 

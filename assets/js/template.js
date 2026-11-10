@@ -98,16 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Lenis Smooth Scroll & GSAP Sync
-  if (typeof Lenis !== 'undefined') {
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth < 1024);
+  if (!isTouchDevice && typeof Lenis !== 'undefined') {
     window.lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 2,
     });
 
-    // Sync Lenis dengan GSAP ScrollTrigger
     if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
       window.lenis.on('scroll', ScrollTrigger.update);
 
@@ -115,9 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
         window.lenis.raf(time * 1000);
       });
 
-      gsap.ticker.lagSmoothing(0, 0);
+      gsap.ticker.lagSmoothing(500, 33);
     } else {
-      // Fallback RAF kalau GSAP gak dipasang
       function raf(time) {
         window.lenis.raf(time);
         requestAnimationFrame(raf);
