@@ -982,36 +982,6 @@ p {
 }
 
 /* ANIMASI ROCKET */
-.flying-rocket {
-  position: absolute;
-  z-index: 1;
-  color: #ff5e00;
-  filter: drop-shadow(0 0 10px rgba(255, 94, 0, 0.6));
-  pointer-events: none;
-  animation: flyAcross 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes flyAcross {
-  0% {
-    left: -10%;
-    top: 80%;
-    transform: rotate(-10deg) scale(0.8);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: 110%;
-    top: 10%;
-    transform: rotate(-40deg) scale(3);
-    opacity: 0;
-  }
-}
-
 /*
 ========================================
 ABOUT - MODERN IMAGE ANIMATION
@@ -4277,41 +4247,6 @@ html.lenis, html.lenis body {
   font-size: 0.65rem;
   font-weight: 800;
   text-anchor: middle;
-}
-
-.bento-serp-preview {
-  background: #f8fafc;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-.serp-favicon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #e2e8f0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  color: #475569;
-}
-.serp-site {
-  font-size: 0.78rem;
-  color: #1e293b;
-}
-.serp-url {
-  font-size: 0.7rem;
-  color: #64748b;
-}
-.serp-title {
-  font-size: 0.95rem;
-  color: #1a0dab;
-  line-height: 1.35;
-}
-.serp-snippet {
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: #475569;
 }
 
 .feat-check {
