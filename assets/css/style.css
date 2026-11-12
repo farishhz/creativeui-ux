@@ -4058,25 +4058,36 @@ html.lenis, html.lenis body {
   align-items: center !important;
   gap: 16px !important;
   width: max-content !important;
+  user-select: none;
+}
+.clients-marquee-group {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-shrink: 0 !important;
   will-change: transform;
   transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
-.clients-marquee-track.track-left {
-  animation: clients-scroll-left 42s linear infinite !important;
+.track-left .clients-marquee-group {
+  animation: clients-scroll-left 36s linear infinite !important;
 }
-.clients-marquee-track.track-right {
-  animation: clients-scroll-right 45s linear infinite !important;
+.track-right .clients-marquee-group {
+  animation: clients-scroll-right 38s linear infinite !important;
 }
-.clients-marquee-wrapper:hover .clients-marquee-track,
-.clients-marquee-wrapper:active .clients-marquee-track {
+.clients-marquee-wrapper:hover .clients-marquee-group,
+.clients-marquee-wrapper:active .clients-marquee-group {
   animation-play-state: paused !important;
 }
 @keyframes clients-scroll-left {
   0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(calc(-100% - 16px), 0, 0); }
 }
 @keyframes clients-scroll-right {
-  0% { transform: translate3d(-50%, 0, 0); }
+  0% { transform: translate3d(calc(-100% - 16px), 0, 0); }
   100% { transform: translate3d(0, 0, 0); }
 }
 .client-marquee-item {
@@ -4091,54 +4102,67 @@ html.lenis, html.lenis body {
   align-items: center;
   justify-content: center;
   padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid rgba(17, 17, 17, 0.08);
   border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .client-marquee-item .client-logo-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 193, 7, 0.4);
+  background: #FFFFFF;
+  border-color: rgba(255, 193, 7, 0.6);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 .client-marquee-item .client-logo-img {
   max-height: 44px;
   width: auto;
   max-width: 90%;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.8);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: grayscale(100%) opacity(0.75);
+  transition: filter 0.25s ease, transform 0.25s ease;
 }
 .client-marquee-item .client-logo-card:hover .client-logo-img {
   filter: grayscale(0%) opacity(1);
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .client-marquee-item {
-    width: 140px !important;
-    min-width: 140px !important;
-    max-width: 140px !important;
-    flex: 0 0 140px !important;
-  }
-  .client-marquee-item .client-logo-card {
-    height: 58px;
-    padding: 8px 12px;
-    border-radius: 10px;
-  }
-  .client-marquee-item .client-logo-img {
-    max-height: 32px;
-  }
   .clients-marquee-track {
     gap: 12px !important;
   }
-  .clients-marquee-track.track-left {
-    animation-duration: 30s !important;
+  .clients-marquee-group {
+    gap: 12px !important;
   }
-  .clients-marquee-track.track-right {
-    animation-duration: 32s !important;
+  .client-marquee-item {
+    width: 135px !important;
+    min-width: 135px !important;
+    max-width: 135px !important;
+    flex: 0 0 135px !important;
   }
+  .client-marquee-item .client-logo-card {
+    height: 56px;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+  .client-marquee-item .client-logo-img {
+    max-height: 30px;
+  }
+  .track-left .clients-marquee-group {
+    animation: clients-scroll-left-mobile 26s linear infinite !important;
+  }
+  .track-right .clients-marquee-group {
+    animation: clients-scroll-right-mobile 28s linear infinite !important;
+  }
+}
+
+@keyframes clients-scroll-left-mobile {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(calc(-100% - 12px), 0, 0); }
+}
+@keyframes clients-scroll-right-mobile {
+  0% { transform: translate3d(calc(-100% - 12px), 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 .advantages-section,
 .services-section,

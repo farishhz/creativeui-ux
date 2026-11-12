@@ -203,7 +203,7 @@ function initMarqueePerformance() {
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        const tracks = entry.target.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+        const tracks = entry.target.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track, .clients-marquee-group');
         tracks.forEach(track => {
           track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
         });
@@ -218,17 +218,17 @@ function initMarqueePerformance() {
 
   wrappers.forEach(w => {
     w.addEventListener('touchstart', () => {
-      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track, .clients-marquee-group');
       tracks.forEach(t => t.style.animationPlayState = 'paused');
     }, { passive: true });
 
     w.addEventListener('touchend', () => {
-      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track, .clients-marquee-group');
       tracks.forEach(t => t.style.animationPlayState = 'running');
     }, { passive: true });
 
     w.addEventListener('touchcancel', () => {
-      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track');
+      const tracks = w.querySelectorAll('.clients-marquee-track, .portfolio-marquee-track, .clients-marquee-group');
       tracks.forEach(t => t.style.animationPlayState = 'running');
     }, { passive: true });
   });

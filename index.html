@@ -55,7 +55,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/style.css?v=8">
+    <link rel="stylesheet" href="assets/css/style.css?v=9">
     <style>
     html, body {
       overflow-x: hidden !important;
@@ -136,25 +136,36 @@
       align-items: center !important;
       gap: 16px !important;
       width: max-content !important;
+      user-select: none;
+    }
+    .clients-marquee-group {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 16px !important;
+      flex-shrink: 0 !important;
       will-change: transform;
       transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
-    .clients-marquee-track.track-left {
-      animation: clients-scroll-left 42s linear infinite !important;
+    .track-left .clients-marquee-group {
+      animation: clients-scroll-left 36s linear infinite !important;
     }
-    .clients-marquee-track.track-right {
-      animation: clients-scroll-right 45s linear infinite !important;
+    .track-right .clients-marquee-group {
+      animation: clients-scroll-right 38s linear infinite !important;
     }
-    .clients-marquee-wrapper:hover .clients-marquee-track,
-    .clients-marquee-wrapper:active .clients-marquee-track {
+    .clients-marquee-wrapper:hover .clients-marquee-group,
+    .clients-marquee-wrapper:active .clients-marquee-group {
       animation-play-state: paused !important;
     }
     @keyframes clients-scroll-left {
       0% { transform: translate3d(0, 0, 0); }
-      100% { transform: translate3d(-50%, 0, 0); }
+      100% { transform: translate3d(calc(-100% - 16px), 0, 0); }
     }
     @keyframes clients-scroll-right {
-      0% { transform: translate3d(-50%, 0, 0); }
+      0% { transform: translate3d(calc(-100% - 16px), 0, 0); }
       100% { transform: translate3d(0, 0, 0); }
     }
     .client-marquee-item {
@@ -169,28 +180,29 @@
       align-items: center;
       justify-content: center;
       padding: 10px 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #FFFFFF;
+      border: 1px solid rgba(17, 17, 17, 0.08);
       border-radius: 12px;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
     }
     .client-marquee-item .client-logo-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 193, 7, 0.4);
+      background: #FFFFFF;
+      border-color: rgba(255, 193, 7, 0.6);
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
     .client-marquee-item .client-logo-img {
       max-height: 44px;
       width: auto;
       max-width: 90%;
       object-fit: contain;
-      filter: grayscale(100%) opacity(0.8);
-      transition: filter 0.3s ease, transform 0.3s ease;
+      filter: grayscale(100%) opacity(0.75);
+      transition: filter 0.25s ease, transform 0.25s ease;
     }
     .client-marquee-item .client-logo-card:hover .client-logo-img {
       filter: grayscale(0%) opacity(1);
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
 
     .portfolio-marquee-wrapper {
@@ -307,28 +319,31 @@
     }
 
     @media (max-width: 768px) {
-      .client-marquee-item {
-        width: 140px !important;
-        min-width: 140px !important;
-        max-width: 140px !important;
-        flex: 0 0 140px !important;
-      }
-      .client-marquee-item .client-logo-card {
-        height: 58px;
-        padding: 8px 12px;
-        border-radius: 10px;
-      }
-      .client-marquee-item .client-logo-img {
-        max-height: 32px;
-      }
       .clients-marquee-track {
         gap: 12px !important;
       }
-      .clients-marquee-track.track-left {
-        animation-duration: 30s !important;
+      .clients-marquee-group {
+        gap: 12px !important;
       }
-      .clients-marquee-track.track-right {
-        animation-duration: 32s !important;
+      .client-marquee-item {
+        width: 135px !important;
+        min-width: 135px !important;
+        max-width: 135px !important;
+        flex: 0 0 135px !important;
+      }
+      .client-marquee-item .client-logo-card {
+        height: 56px;
+        padding: 6px 10px;
+        border-radius: 10px;
+      }
+      .client-marquee-item .client-logo-img {
+        max-height: 30px;
+      }
+      .track-left .clients-marquee-group {
+        animation: clients-scroll-left-mobile 26s linear infinite !important;
+      }
+      .track-right .clients-marquee-group {
+        animation: clients-scroll-right-mobile 28s linear infinite !important;
       }
 
       .portfolio-marquee-item {
@@ -371,6 +386,15 @@
         height: 30px !important;
         margin: 0 4px !important;
       }
+    }
+
+    @keyframes clients-scroll-left-mobile {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(calc(-100% - 12px), 0, 0); }
+    }
+    @keyframes clients-scroll-right-mobile {
+      0% { transform: translate3d(calc(-100% - 12px), 0, 0); }
+      100% { transform: translate3d(0, 0, 0); }
     }
     </style>
 </head>
@@ -804,7 +828,8 @@
         <div class="clients-marquee-container position-relative z-2">
             <div class="clients-marquee-wrapper mb-3">
                 <div class="clients-marquee-track track-left">
-                                                                        <div class="client-marquee-item">
+                    <div class="clients-marquee-group">
+                                                    <div class="client-marquee-item">
                                 <div class="client-logo-card">
                                     <img src="storage/clients/7NXCPE90BJS2ZJYWAmCjnydCsil9341vmmBa3gOG.webp" alt="IQOS" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
@@ -874,7 +899,9 @@
                                     <img src="storage/clients/TWlP8gEib80IM6fPksWwveHWxBbUphtOVJb9K6N8.webp" alt="LOGISALL" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
                             </div>
-                                                                                                <div class="client-marquee-item">
+                                            </div>
+                    <div class="clients-marquee-group" aria-hidden="true">
+                                                    <div class="client-marquee-item">
                                 <div class="client-logo-card">
                                     <img src="storage/clients/7NXCPE90BJS2ZJYWAmCjnydCsil9341vmmBa3gOG.webp" alt="IQOS" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
@@ -944,12 +971,14 @@
                                     <img src="storage/clients/TWlP8gEib80IM6fPksWwveHWxBbUphtOVJb9K6N8.webp" alt="LOGISALL" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
                             </div>
-                                                            </div>
+                                            </div>
+                </div>
             </div>
 
             <div class="clients-marquee-wrapper">
                 <div class="clients-marquee-track track-right">
-                                                                        <div class="client-marquee-item">
+                    <div class="clients-marquee-group">
+                                                    <div class="client-marquee-item">
                                 <div class="client-logo-card">
                                     <img src="storage/clients/IjequHH1frJCXWaEpDGrWyWkmoUJ4X6BJUADLmxi.webp" alt="KINGSTON SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
@@ -1019,7 +1048,9 @@
                                     <img src="storage/clients/16MRqsrd5RcnoGxD5yVPdgPD1eiGqoivzGNRwkjy.webp" alt="KARALIA" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
                             </div>
-                                                                                                <div class="client-marquee-item">
+                                            </div>
+                    <div class="clients-marquee-group" aria-hidden="true">
+                                                    <div class="client-marquee-item">
                                 <div class="client-logo-card">
                                     <img src="storage/clients/IjequHH1frJCXWaEpDGrWyWkmoUJ4X6BJUADLmxi.webp" alt="KINGSTON SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
@@ -1089,11 +1120,11 @@
                                     <img src="storage/clients/16MRqsrd5RcnoGxD5yVPdgPD1eiGqoivzGNRwkjy.webp" alt="KARALIA" class="client-logo-img" loading="lazy" decoding="async">
                                 </div>
                             </div>
-                                                            </div>
+                                            </div>
+                </div>
             </div>
         </div>
     </section>
-
     <section class="portfolio-section py-section position-relative overflow-hidden" id="work">
         <div class="portfolio-bg-shape" aria-hidden="true">
             <img src="storage/background shape/background3.webp" alt="" class="portfolio-bg-shape-img" loading="lazy" decoding="async">
@@ -1809,9 +1840,6 @@
 
     </main>
     <footer class="footer py-5 position-relative overflow-hidden">
-        <div class="footer-bg-shape" aria-hidden="true">
-            <img src="storage/background shape/footer.webp" alt="" class="footer-bg-shape-img" loading="lazy" decoding="async">
-        </div>
         <div class="footer-pattern"></div>
 
         <div class="container position-relative z-2">
