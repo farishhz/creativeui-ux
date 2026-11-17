@@ -53,7 +53,7 @@ body {
   font-family: var(--font-main);
   background-color: var(--bg-color);
   color: var(--text-color);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -4301,4 +4301,167 @@ html.lenis, html.lenis body {
     width: 44px;
     height: 44px;
   }
+}
+
+#trainers.trainer {
+  overflow: visible !important;
+  overflow-x: clip !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .mentor-pin-track {
+    position: relative;
+    height: 340vh;
+  }
+  .mentor-pin-viewport {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 84px;
+    padding-bottom: 32px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mentor-pin-viewport {
+    padding: 3.5rem 0;
+  }
+}
+
+.mentor-stage-visual {
+  position: relative;
+  height: 390px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.mentor-stage-glow {
+  position: absolute;
+  inset: 8% 5%;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 193, 7, 0.16), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mentor-stage-frame {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(0.97);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mentor-stage-frame.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.mentor-stage-img {
+  width: 100%;
+  height: 100%;
+  max-height: 390px;
+  object-fit: contain;
+  object-position: bottom center;
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+}
+
+.mentor-stage-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.mentor-stage-dot {
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.mentor-stage-dot.is-active {
+  width: 44px;
+  background: #ffc107;
+}
+
+@media (min-width: 992px) {
+  .mentor-detail-stage {
+    position: relative;
+    min-height: 360px;
+  }
+  .mentor-detail-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(18px);
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.35s ease;
+    pointer-events: none;
+  }
+  .mentor-detail-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mentor-detail-slide {
+    padding: 2.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .mentor-detail-slide:last-child {
+    border-bottom: none;
+  }
+}
+
+.mentor-mobile-portrait {
+  height: 270px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 193, 7, 0.14), transparent 70%);
+}
+
+.mentor-mobile-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+}
+
+.mentor-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f1f1f1;
 }
