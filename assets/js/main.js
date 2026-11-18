@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMarqueePerformance();
   initHeroPerson();
   initStatsCounter();
+  initClientsSwiper();
 });
 
 function initCursor() {
@@ -334,29 +335,77 @@ function initHeroPerson() {
 }
 
 function initStatsCounter() {
-  const statNumbers = document.querySelectorAll('.stat-number');
-  const triggerEl = document.querySelector('.stats-horizontal-inline') || document.querySelector('.about-section');
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  const triggerEl = document.querySelector('.stats-horizontal-inline') || document.querySelector('.about-stats-card') || document.querySelector('.about-section');
   if (!statNumbers.length || !triggerEl || typeof ScrollTrigger === 'undefined') return;
 
   ScrollTrigger.create({
     trigger: triggerEl,
-    start: 'top 85%',
+    start: 'top 88%',
     once: true,
     onEnter: () => {
       statNumbers.forEach(el => {
-        const targetValue = parseInt(el.getAttribute('data-target') || el.textContent, 10);
+        const targetValue = parseInt(el.getAttribute('data-target'), 10);
         if (isNaN(targetValue)) return;
 
         const counterObj = { val: 0 };
         gsap.to(counterObj, {
           val: targetValue,
-          duration: 2.2,
+          duration: 1.8,
           ease: 'power2.out',
           onUpdate: () => {
             el.textContent = Math.round(counterObj.val);
           }
         });
       });
+    }
+  });
+}
+
+function initClientsSwiper() {
+  const container = document.querySelector('.clients-grid-swiper');
+  if (!container || typeof Swiper === 'undefined') return;
+
+  new Swiper('.clients-grid-swiper', {
+    slidesPerView: 2,
+    grid: {
+      rows: 2,
+      fill: 'row',
+    },
+    spaceBetween: 10,
+    pagination: {
+      el: '.clients-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.clients-next',
+      prevEl: '.clients-prev',
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 3,
+        grid: {
+          rows: 2,
+          fill: 'row',
+        },
+        spaceBetween: 12,
+      },
+      768: {
+        slidesPerView: 4,
+        grid: {
+          rows: 2,
+          fill: 'row',
+        },
+        spaceBetween: 12,
+      },
+      1024: {
+        slidesPerView: 6,
+        grid: {
+          rows: 2,
+          fill: 'row',
+        },
+        spaceBetween: 12,
+      }
     }
   });
 }

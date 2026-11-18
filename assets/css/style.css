@@ -2421,9 +2421,9 @@ html.lenis, html.lenis body {
 
 /* Stats Card Styling */
 .about-stats-card {
-  background: #e7e7e7;
-  /* border: 1px solid rgba(255, 255, 255, 0.08); */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
 }
 
 .stat-number {
@@ -3455,7 +3455,7 @@ html.lenis, html.lenis body {
 @media (min-width: 992px) {
 
   .divider-grid > [class*='col-']:not(:last-child) .stat-item {
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .nav-rubicweb .navbar-nav > .dropdown {
@@ -4464,4 +4464,35 @@ html.lenis, html.lenis body {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: #f1f1f1;
+}
+
+.visi-dark-panel {
+  background: #121212;
+  color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.misi-list-item {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.misi-list-item:first-child {
+  padding-top: 4px;
+}
+
+.misi-list-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.value-pillar-item {
+  padding-top: 24px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.value-pillar-item:hover {
+  border-top-color: #ffc107;
 }
