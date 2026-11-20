@@ -9,16 +9,12 @@ window.lenis = null;
 window.submitFormThenWhatsApp = function (opts) {
   const form = opts.form;
   const alertBox = opts.alertBox;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  if (typeof grecaptcha !== 'undefined') {
-    opts.payload['g-recaptcha-response'] = grecaptcha.getResponse();
-  }
 
   function showAlert(type, messages) {
     alertBox.className = 'alert alert-' + type;
     alertBox.innerHTML = '';
     const list = document.createElement('ul');
-    list.className = 'mb-0';
+    list.className = 'mb-0 ps-3';
     messages.forEach(function (m) {
       const li = document.createElement('li');
       li.textContent = m;
@@ -29,57 +25,45 @@ window.submitFormThenWhatsApp = function (opts) {
 
   alertBox.className = 'alert d-none';
 
-  // Jendela WhatsApp dibuka lebih dulu (masih dalam aksi klik) supaya tidak diblokir browser,
-  // URL-nya baru diisi setelah server memastikan data tersimpan.
-  const waWindow = window.open('', '_blank');
-  if (submitBtn) submitBtn.disabled = true;
+  const p = opts.payload || {};
+  const errors = [];
 
-  fetch(opts.url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-    },
-    body: JSON.stringify(opts.payload),
-  })
-    .then(async function (res) {
-      if (res.status === 422) {
-        const data = await res.json();
-        showAlert('danger', Object.values(data.errors).flat());
-        if (waWindow) waWindow.close();
-        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-        return;
-      }
-      if (res.status === 429) {
-        showAlert('warning', ['Terlalu banyak percobaan. Silakan coba lagi beberapa menit lagi.']);
-        if (waWindow) waWindow.close();
-        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-        return;
-      }
-      if (!res.ok) {
-        throw new Error('server');
-      }
+  if (!p.name || p.name.length < 2) {
+    errors.push('Nama lengkap wajib diisi.');
+  }
+  if (typeof p.email !== 'undefined' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) {
+    errors.push('Format alamat email tidak valid.');
+  }
+  if (typeof p.phone !== 'undefined' && p.phone.replace(/\D/g, '').length < 8) {
+    errors.push('Nomor WhatsApp minimal 8 digit.');
+  }
+  if (typeof p.program !== 'undefined' && !p.program) {
+    errors.push('Silakan pilih program pelatihan terlebih dahulu.');
+  }
+  if (typeof p.package !== 'undefined' && !p.package) {
+    errors.push('Silakan pilih paket layanan terlebih dahulu.');
+  }
+  if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0) {
+    errors.push('Silakan centang verifikasi reCAPTCHA terlebih dahulu.');
+  }
 
-      const waUrl = 'https://wa.me/' + opts.waNumber + '?text=' + encodeURIComponent(opts.buildWaText(opts.payload));
-      if (waWindow) {
-        waWindow.location.href = waUrl;
-      } else {
-        window.location.href = waUrl;
-      }
+  if (errors.length > 0) {
+    showAlert('danger', errors);
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
 
-      showAlert('success', ['Data berhasil dikirim, terima kasih! Silakan lanjutkan pesan di WhatsApp yang terbuka.']);
-      form.reset();
-      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-    })
-    .catch(function () {
-      showAlert('danger', ['Terjadi kendala saat mengirim data. Silakan coba lagi.']);
-      if (waWindow) waWindow.close();
-      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-    })
-    .finally(function () {
-      if (submitBtn) submitBtn.disabled = false;
-    });
+  const waUrl = 'https://wa.me/' + opts.waNumber + '?text=' + encodeURIComponent(opts.buildWaText(p));
+  const waWindow = window.open(waUrl, '_blank', 'noopener');
+  if (!waWindow) {
+    window.location.href = waUrl;
+  }
+
+  showAlert('success', ['Data berhasil diverifikasi! Silakan lanjutkan pengiriman pesan di WhatsApp.']);
+  form.reset();
+  if (typeof grecaptcha !== 'undefined') {
+    try { grecaptcha.reset(); } catch (err) {}
+  }
 };
 
 
