@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="local-clone">
+    <meta name="robots" content="index, follow">
+
+    <title>Portofolio Karya &amp; Rekayasa Digital | Rubicweb</title>
+    <meta name="description" content="Lihat portofolio proyek website, aplikasi web, dan sistem POS yang telah dikerjakan Rubicweb untuk berbagai klien.">
+    <meta name="keywords" content="jasa website, jasa seo, digital development, rubicweb, portofolio website">
+    <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="portofolio-proyek.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rubicweb">
+    <meta property="og:title" content="Portofolio Karya &amp; Rekayasa Digital | Rubicweb">
+    <meta property="og:description" content="Lihat portofolio proyek website, aplikasi web, dan sistem POS yang telah dikerjakan Rubicweb untuk berbagai klien.">
+    <meta property="og:url" content="portofolio-proyek.html">
+    <meta property="og:image" content="https://creative-rubicweb.vercel.app/storage/seo/Xl0DG9Ja3pC0AhUJyYqiJ2pcKs00kzSYl6e1k9z2.jpg">
+    <meta property="og:image:secure_url" content="https://creative-rubicweb.vercel.app/storage/seo/Xl0DG9Ja3pC0AhUJyYqiJ2pcKs00kzSYl6e1k9z2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portofolio Karya &amp; Rekayasa Digital | Rubicweb">
+    <meta name="twitter:description" content="Lihat portofolio proyek website, aplikasi web, dan sistem POS yang telah dikerjakan Rubicweb untuk berbagai klien.">
+    <meta name="twitter:image" content="https://creative-rubicweb.vercel.app/storage/seo/Xl0DG9Ja3pC0AhUJyYqiJ2pcKs00kzSYl6e1k9z2.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Rubicweb",
+      "url": "https://creative-rubicweb.vercel.app",
+      "logo": "https://creative-rubicweb.vercel.app/assets/img/main-logo.webp",
+      "image": "https://creative-rubicweb.vercel.app/storage/seo/Xl0DG9Ja3pC0AhUJyYqiJ2pcKs00kzSYl6e1k9z2.jpg",
+      "description": "Jasa Website Profesional dengan layanan terbaik menyediakan layanan jasa pembuatan website perusahaan / company profile, online store, e-commerce, POS dan aplikasi custom.",
+      "telephone": "+6282299009615",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bellezza BSA Lantai 1 Unit 106, Permata Hijau",
+        "addressLocality": "Jakarta Selatan",
+        "postalCode": "12210",
+        "addressCountry": "ID"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css?v=10">
+    <style>
+    html, body {
+      overflow-x: clip !important;
+      max-width: 100vw;
+    }
+
+    .advantages-section,
+    .services-section,
+    .clients-section,
+    .portfolio-section,
+    .cta-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 700px;
+    }
+
+    .advantages-bg-shape {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .advantages-bg-shape-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      opacity: 0.95;
+    }
+
+    .clients-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    .clients-marquee-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .clients-marquee-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 4px 0;
+    }
+    .clients-marquee-wrapper::before,
+    .clients-marquee-wrapper::after,
+    .portfolio-marquee-wrapper::before,
+    .portfolio-marquee-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: clamp(24px, 5vw, 70px);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .clients-marquee-wrapper::before,
+    .portfolio-marquee-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+    .clients-marquee-wrapper::after,
+    .portfolio-marquee-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .clients-marquee-track {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 16px !important;
+      width: max-content !important;
+      user-select: none;
+    }
+    .clients-marquee-group {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 16px !important;
+      flex-shrink: 0 !important;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .track-left .clients-marquee-group {
+      animation: clients-scroll-left 36s linear infinite !important;
+    }
+    .track-right .clients-marquee-group {
+      animation: clients-scroll-right 38s linear infinite !important;
+    }
+    .clients-marquee-wrapper:hover .clients-marquee-group,
+    .clients-marquee-wrapper:active .clients-marquee-group {
+      animation-play-state: paused !important;
+    }
+    @keyframes clients-scroll-left {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(calc(-100% - 16px), 0, 0); }
+    }
+    @keyframes clients-scroll-right {
+      0% { transform: translate3d(calc(-100% - 16px), 0, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+    .client-marquee-item {
+      width: 210px !important;
+      min-width: 210px !important;
+      max-width: 210px !important;
+      flex: 0 0 210px !important;
+    }
+    .client-marquee-item .client-logo-card {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .client-marquee-item .client-logo-card:hover {
+      background: transparent;
+      border: none;
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+    .client-marquee-item .client-logo-img {
+      max-height: 52px;
+      width: auto;
+      max-width: 90%;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.85);
+      transition: filter 0.25s ease, transform 0.25s ease;
+    }
+    .client-marquee-item .client-logo-card:hover .client-logo-img {
+      filter: grayscale(0%) opacity(1);
+      transform: scale(1.05);
+    }
+
+    .portfolio-marquee-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 16px 0 28px 0;
+    }
+    .portfolio-marquee-track {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: stretch !important;
+      gap: 28px !important;
+      width: max-content !important;
+      animation: portfolio-marquee-glide 48s linear infinite !important;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+    .portfolio-marquee-wrapper:hover .portfolio-marquee-track,
+    .portfolio-marquee-wrapper:active .portfolio-marquee-track {
+      animation-play-state: paused !important;
+    }
+    @keyframes portfolio-marquee-glide {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    .portfolio-marquee-item {
+      width: 370px !important;
+      min-width: 370px !important;
+      max-width: 370px !important;
+      flex: 0 0 370px !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .portfolio-marquee-item .project-card {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
+    }
+    .portfolio-marquee-item .project-img-wrapper {
+      width: 100% !important;
+      height: 250px !important;
+      border-radius: 14px !important;
+      overflow: hidden !important;
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: transparent !important;
+    }
+    .portfolio-marquee-item .device-desktop {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      background: #141418 !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    }
+    .portfolio-marquee-item .browser-header {
+      height: 24px !important;
+      background: #1e1e24 !important;
+      padding: 0 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      flex-shrink: 0 !important;
+    }
+    .portfolio-marquee-item .browser-header .dot {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+    }
+    .portfolio-marquee-item .browser-header .dot.red { background: #ff5f56 !important; }
+    .portfolio-marquee-item .browser-header .dot.yellow { background: #ffbd2e !important; }
+    .portfolio-marquee-item .browser-header .dot.green { background: #27c93f !important; }
+    .portfolio-marquee-item .device-desktop .portfolio-img {
+      width: 100% !important;
+      height: calc(100% - 24px) !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      display: block !important;
+    }
+    .portfolio-marquee-item .device-mobile {
+      width: 135px !important;
+      height: 94% !important;
+      background: #000 !important;
+      border-radius: 18px !important;
+      border: 4px solid #1c1c20 !important;
+      position: relative !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+      overflow: hidden !important;
+      flex-shrink: 0 !important;
+      margin: 0 auto !important;
+    }
+    .portfolio-marquee-item .device-mobile .portfolio-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      display: block !important;
+    }
+    .portfolio-marquee-item .project-info {
+      margin-top: 14px !important;
+    }
+    .portfolio-marquee-item .project-title {
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 3px !important;
+    }
+
+    @media (max-width: 768px) {
+      .clients-marquee-track {
+        gap: 12px !important;
+      }
+      .clients-marquee-group {
+        gap: 12px !important;
+      }
+      .client-marquee-item {
+        width: 160px !important;
+        min-width: 160px !important;
+        max-width: 160px !important;
+        flex: 0 0 160px !important;
+      }
+      .client-marquee-item .client-logo-card {
+        height: 68px;
+        padding: 6px 8px;
+        border-radius: 0;
+      }
+      .client-marquee-item .client-logo-img {
+        max-height: 46px;
+      }
+      .track-left .clients-marquee-group {
+        animation: clients-scroll-left-mobile 26s linear infinite !important;
+      }
+      .track-right .clients-marquee-group {
+        animation: clients-scroll-right-mobile 28s linear infinite !important;
+      }
+
+      .portfolio-marquee-item {
+        width: 290px !important;
+        min-width: 290px !important;
+        max-width: 290px !important;
+        flex: 0 0 290px !important;
+      }
+      .portfolio-marquee-item .project-img-wrapper {
+        height: 200px !important;
+      }
+      .portfolio-marquee-track {
+        gap: 18px !important;
+        animation-duration: 35s !important;
+      }
+
+      .py-section {
+        padding-top: clamp(2.5rem, 6vw, 4rem) !important;
+        padding-bottom: clamp(2.5rem, 6vw, 4rem) !important;
+      }
+      .about-image-wrapper {
+        min-height: 240px !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .stats-horizontal-inline {
+        margin-top: 1.5rem !important;
+        padding-top: 1rem !important;
+      }
+      .stat-number {
+        font-size: 1.8rem !important;
+      }
+      .stat-plus {
+        font-size: 1.2rem !important;
+      }
+      .stat-label {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.05em !important;
+      }
+      .stat-divider {
+        height: 30px !important;
+        margin: 0 4px !important;
+      }
+    }
+
+    @keyframes clients-scroll-left-mobile {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(calc(-100% - 12px), 0, 0); }
+    }
+    @keyframes clients-scroll-right-mobile {
+      0% { transform: translate3d(calc(-100% - 12px), 0, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="customCursor">
+        <svg class="cursor-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 3L12 24.5L15.5 14.5L25.5 11L4 3Z" fill="#FFC107" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top nav-rubicweb" id="mainNavbar">
+        <div class="container-fluid px-md-5">
+
+            <a class="navbar-brand brand-logo d-flex align-items-center" href="index.html">
+                <img src="assets/img/main-logo.webp" alt="rubicweb-jasa-pembuatan-website-terbaik-di-jakarta" class="logo-img" loading="eager" decoding="async">
+            </a>
+
+            <button class="navbar-toggler custom-toggler" type="button" id="menuToggle" aria-label="Buka menu navigasi">
+                <span class="bar top-bar"></span>
+                <span class="bar bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav align-items-lg-center me-lg-4">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-hover" href="#services" id="jasaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Jasa Website &amp; SEO
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="jasaDropdown">
+                            <li>
+                                <a class="dropdown-item" href="jasa-pembuatan-website.html">
+                                    Jasa Pembuatan Website
+                                </a>
+                            </li>
+                                                            <li><a class="dropdown-item" href="seo-terbaik-se-indonesia.html">SEO &amp; Digital Marketing</a></li>
+                                                            <li><a class="dropdown-item" href="#">Pengembangan AI</a></li>
+                                                            <li><a class="dropdown-item" href="#">Otomasi Bisnis</a></li>
+                                                    </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-hover" href="#" id="programDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Program
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programDropdown">
+                            <li><a class="dropdown-item" href="coding-bootcamp-gratis.html">Pelatihan &amp; Training</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="blog.html">Blog</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-hover" href="#career" id="careerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Karir
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careerDropdown">
+                            <li><a class="dropdown-item" href="lowongan-kerja-terbaru.html">Lowongan Kerja</a></li>
+                            <li><a class="dropdown-item" href="magang.html">Internship / PKL</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-hover" href="#" id="profilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profil
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profilDropdown">
+                            <li><a class="dropdown-item" href="tentang-kami.html">Tentang Kami</a></li>
+                            <li><a class="dropdown-item" href="portofolio-proyek.html">Portofolio</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="hubungi-kami.html">Kontak</a>
+                    </li>
+                </ul>
+
+                <a href="jasa-pembuatan-website.html" class="btn btn-rubic-cta magnetic-btn">
+                    <span>Paket Website &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="overlay-inner px-3 py-4">
+            <div class="mobile-nav-wrapper">
+                <ul class="mobile-nav-links list-unstyled m-0">
+
+                    <li class="mobile-nav-item mobile-accordion">
+                        <div class="accordion-trigger">
+                            <a href="#" class="mobile-link">Jasa Website &amp; SEO</a>
+                            <button class="acc-btn" type="button" aria-label="Buka submenu Jasa Website dan SEO">
+                                <i class="bx bx-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="acc-content">
+                            <div class="acc-content-inner">
+                                <div class="nested-accordion">
+                                    <div class="nested-trigger">
+                                        <a href="jasa-pembuatan-website.html" class="nested-title text-decoration-none">
+                                            Jasa Pembuatan Website
+                                        </a>
+                                    </div>
+                                </div>
+                                                                    <a href="seo-terbaik-se-indonesia.html" class="mobile-sub-link">SEO &amp; Digital Marketing</a>
+                                                                    <a href="#" class="mobile-sub-link">Pengembangan AI</a>
+                                                                    <a href="#" class="mobile-sub-link">Otomasi Bisnis</a>
+                                                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mobile-nav-item mobile-accordion">
+                        <div class="accordion-trigger">
+                            <a href="coding-bootcamp-gratis.html" class="mobile-link">Program</a>
+                            <button class="acc-btn" type="button" aria-label="Buka submenu Program">
+                                <i class="bx bx-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="acc-content">
+                            <div class="acc-content-inner">
+                                <a href="coding-bootcamp-gratis.html" class="mobile-sub-link">Pelatihan &amp; Training</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-link">Blog</a>
+                    </li>
+
+                    <li class="mobile-nav-item mobile-accordion">
+                        <div class="accordion-trigger">
+                            <a href="#career" class="mobile-link">Karir</a>
+                            <button class="acc-btn" type="button" aria-label="Buka submenu Career">
+                                <i class="bx bx-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="acc-content">
+                            <div class="acc-content-inner">
+                                <a href="lowongan-kerja-terbaru.html" class="mobile-sub-link">Lowongan Kerja</a>
+                                <a href="magang.html" class="mobile-sub-link">Internship / PKL</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mobile-nav-item mobile-accordion">
+                        <div class="accordion-trigger">
+                            <a href="#profil" class="mobile-link">Profil</a>
+                            <button class="acc-btn" type="button" aria-label="Buka submenu Profil">
+                                <i class="bx bx-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="acc-content">
+                            <div class="acc-content-inner">
+                                <a href="tentang-kami.html" class="mobile-sub-link">Tentang Kami</a>
+                                <a href="portofolio-proyek.html" class="mobile-sub-link">Portofolio</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mobile-nav-item">
+                        <a href="hubungi-kami.html" class="mobile-link">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mobile-cta-wrapper mt-4">
+                <a href="jasa-pembuatan-website.html" class="btn btn-rubic-cta w-100 text-center py-3">
+                    <span>Harga Paket Website &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="page-header-section pt-5 mt-5 pb-4 position-relative overflow-hidden border-bottom border-secondary border-opacity-10">
+            <div class="container pt-5 pb-4 position-relative z-1">
+                <div class="row align-items-end g-4">
+                    <div class="col-lg-6">
+                        <div class="d-inline-flex align-items-center gap-2 mb-3">
+                            <span class="d-inline-block bg-warning" style="width: 28px; height: 2px;"></span>
+                            <span class="text-uppercase fw-bold text-dark" style="letter-spacing: 0.14em; font-size: 0.78rem;">Portofolio Proyek</span>
+                        </div>
+                        <h1 class="hero-title headline-kinetic mb-0">
+                            <span class="word d-block">Jasa Website</span>
+                            <span class="word accent-text shimmer-text d-block">&amp; Aplikasi Mobile</span>
+                        </h1>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="text-muted lead mb-0">Eksplorasi jajaran proyek web, aplikasi custom, hingga ekosistem POS yang telah kami rancang dengan presisi tinggi untuk mendorong pertumbuhan bisnis klien secara nyata.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-5 position-relative">
+            <div class="container py-lg-3">
+                <div class="d-flex flex-wrap gap-2 mb-5">
+                    <button type="button" class="btn btn-sm btn-dark rounded-pill px-4 fw-semibold port-filter-btn active" data-port-filter="all">Semua</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4 fw-semibold port-filter-btn" data-port-filter="corporate">Korporat</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4 fw-semibold port-filter-btn" data-port-filter="ecommerce">E-Commerce</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4 fw-semibold port-filter-btn" data-port-filter="webapp">Web App</button>
+                </div>
+
+                <div class="row g-4">
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="webapp">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/TITsdu1KmTpZlAMBFOiV6ePovzAYgvEUvcajUWH2.webp" alt="Pinjamin" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Pinjamin</h3>
+                                    <p class="project-meta mb-0">Fintech P2P Lending</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Pinjamin">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="ecommerce">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/2TjOW27ZlJnf3IuQBIjiISlCL8XOPEg3FmDS8xl7.webp" alt="Karalia" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Karalia</h3>
+                                    <p class="project-meta mb-0">Toko Online Jual Beli Emas</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Karalia">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="corporate">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/VGVbdVfV7PCZK4amTNuceQbv9pj6xRIIIP8NyyrK.webp" alt="Wilmar" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Wilmar</h3>
+                                    <p class="project-meta mb-0">Website Perusahaan Publik / Tbk</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Wilmar">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="webapp">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-mobile">
+                                        <div class="phone-notch"></div>
+                                        <img src="storage/portfolio/JNVRCumqZhhPODJ6m1I24dNPGhwUtHhbc1FR5o5T.webp" alt="JelyPOS" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">JelyPOS</h3>
+                                    <p class="project-meta mb-0">POS Aplikasi Kasir</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek JelyPOS">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="corporate">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/FrhOgMECdXJhf9zPgs37KASHyVBYSwU0CIXaqit0.webp" alt="Multibangun Patria" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Multibangun Patria</h3>
+                                    <p class="project-meta mb-0">Perusahaan Konstruksi</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Multibangun Patria">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="corporate">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/Jt7hbH5oylDDlXozXpJbrolf5hsMovOQt7eg1MUH.webp" alt="Amethyst Suites" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Amethyst Suites</h3>
+                                    <p class="project-meta mb-0">Virtual Office</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Amethyst Suites">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="corporate">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/Vaeu7czBEQI2vttVXaLKZaKJ1IOQvAyC5p6LYYkJ.webp" alt="Kingstone Medical" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Kingstone Medical</h3>
+                                    <p class="project-meta mb-0">Klinik Online Booking</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Kingstone Medical">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="corporate">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/N6PK7yqyUVnK6gy3YMJJkq9JLZpvySmuGi4oXv6c.webp" alt="Dompet Dhuafa" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Dompet Dhuafa</h3>
+                                    <p class="project-meta mb-0">Website Yayasan / NGO</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Dompet Dhuafa">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="webapp">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-mobile">
+                                        <div class="phone-notch"></div>
+                                        <img src="storage/portfolio/13ncOhHhDpxFJN3x4vAchV7gs7Jkn7CV4PiudTn5.webp" alt="Kebab Dhabi" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Kebab Dhabi</h3>
+                                    <p class="project-meta mb-0">Aplikasi Resto / Pesan Makanan</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Kebab Dhabi">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="webapp">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-mobile">
+                                        <div class="phone-notch"></div>
+                                        <img src="storage/portfolio/ZpAIc9QpzYtRQLZk4WR2XoEf8kPXuZmVf5D6pBVR.webp" alt="DMS" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">DMS</h3>
+                                    <p class="project-meta mb-0">Manajemen Dokumen &amp; Approval</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek DMS">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                        <div class="col-md-6 col-lg-4 port-item" data-category="corporate">
+                        <article class="project-card h-100">
+                            <div class="project-img-wrapper">
+                                                                    <div class="device-frame device-desktop">
+                                        <div class="browser-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <img src="storage/portfolio/4lvbYq1VIkuXbKmSbN7C0L6hHuWd0zMbIIZyYSnI.webp" alt="Logisall" class="portfolio-img" loading="lazy" decoding="async">
+                                    </div>
+                                                            </div>
+                            <div class="project-info p-3 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="project-title mb-1">Logisall</h3>
+                                    <p class="project-meta mb-0">Rental Alat Berat</p>
+                                </div>
+                                <a href="hubungi-kami.html" class="btn-icon-circle text-decoration-none" aria-label="Konsultasi proyek Logisall">&rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                                    </div>
+            </div>
+        </section>
+
+    <section class="clients-section py-section position-relative overflow-hidden" id="clients">
+        <div class="container position-relative z-2">
+
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-6">
+                    <span class="section-subtitle d-block mb-2">Terpercaya &amp; Berpengalaman</span>
+                    <h2 class="hero-title headline-kinetic display-6 fw-bold">
+                        <span class="word">Kemitraan &amp;</span><br>
+                        <span class="word accent-text">Kepercayaan Klien</span>
+                    </h2>
+                </div>
+                <div class="col-lg-6 mt-3 mt-lg-0">
+                    <p class="text-muted lead mb-0">
+                        Kami bangga dapat berkolaborasi dengan berbagai brand terkemuka, institusi, dan startup visioner dalam menghadirkan ekosistem digital kelas dunia.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="clients-marquee-container position-relative z-2">
+            <div class="clients-marquee-wrapper mb-3">
+                <div class="clients-marquee-track track-left">
+                    <div class="clients-marquee-group">
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/7NXCPE90BJS2ZJYWAmCjnydCsil9341vmmBa3gOG.webp" alt="IQOS" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wmJP69e00l6GUt6mDJwzPnYGlrQwkTjb3sMjJ0TF.webp" alt="WILMAR" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4tJK5SJAM1z3Zm82CTelcrlLgJ1TYYR7xUopYxUa.webp" alt="L&#039;OREAL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/xWlwUTy0zbdF0jzNH80GjBvcZNkGvmK362UHYjt3.webp" alt="SHISEIDO" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/lHmPE1sVmjKmxhK83T2Mv60h20mtCDXMSMpZ4izM.webp" alt="PIGEON" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/BehEqs6crXmhYncWPfpNPnOUAQTaflFFnxPGDEMh.webp" alt="YSL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/guaGGHW5P5wYo48u67OCWgg2TVOsY0KBo4Fe4fuS.webp" alt="SANIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/NtQmyBbKXpjcVSAhk2fYrVBfb4OyJVclZN41WIrU.webp" alt="DOMPET DHUAFA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/VgtFzgsOgWtWQbIO2fV5iaYx2BqO2C1yOyhr7e0V.webp" alt="PLAN INDONESIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/pnZQoHEGN3yrOZwJhUCHkB2sTDuvYL7dmI8Sut1Y.webp" alt="PINJAMIN" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/g0QLLVmwMRyqrH2kadE8KCxPikjzrVqfuNoc7zJc.webp" alt="FINANKU" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/udL0cgilkXD7Yw5ogqLRXTXObPRty0BKqhJU5tDu.webp" alt="MULTIBANGUN PATRIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wIvA15XJZ4lfM9nhqfWFkeIIb9eo8apcy8rzfF5f.webp" alt="AMETHYST SUITES" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TWlP8gEib80IM6fPksWwveHWxBbUphtOVJb9K6N8.webp" alt="LOGISALL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                            </div>
+                    <div class="clients-marquee-group" aria-hidden="true">
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/7NXCPE90BJS2ZJYWAmCjnydCsil9341vmmBa3gOG.webp" alt="IQOS" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wmJP69e00l6GUt6mDJwzPnYGlrQwkTjb3sMjJ0TF.webp" alt="WILMAR" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4tJK5SJAM1z3Zm82CTelcrlLgJ1TYYR7xUopYxUa.webp" alt="L&#039;OREAL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/xWlwUTy0zbdF0jzNH80GjBvcZNkGvmK362UHYjt3.webp" alt="SHISEIDO" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/lHmPE1sVmjKmxhK83T2Mv60h20mtCDXMSMpZ4izM.webp" alt="PIGEON" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/BehEqs6crXmhYncWPfpNPnOUAQTaflFFnxPGDEMh.webp" alt="YSL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/guaGGHW5P5wYo48u67OCWgg2TVOsY0KBo4Fe4fuS.webp" alt="SANIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/NtQmyBbKXpjcVSAhk2fYrVBfb4OyJVclZN41WIrU.webp" alt="DOMPET DHUAFA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/VgtFzgsOgWtWQbIO2fV5iaYx2BqO2C1yOyhr7e0V.webp" alt="PLAN INDONESIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/pnZQoHEGN3yrOZwJhUCHkB2sTDuvYL7dmI8Sut1Y.webp" alt="PINJAMIN" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/g0QLLVmwMRyqrH2kadE8KCxPikjzrVqfuNoc7zJc.webp" alt="FINANKU" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/udL0cgilkXD7Yw5ogqLRXTXObPRty0BKqhJU5tDu.webp" alt="MULTIBANGUN PATRIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/wIvA15XJZ4lfM9nhqfWFkeIIb9eo8apcy8rzfF5f.webp" alt="AMETHYST SUITES" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TWlP8gEib80IM6fPksWwveHWxBbUphtOVJb9K6N8.webp" alt="LOGISALL" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+
+            <div class="clients-marquee-wrapper">
+                <div class="clients-marquee-track track-right">
+                    <div class="clients-marquee-group">
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/IjequHH1frJCXWaEpDGrWyWkmoUJ4X6BJUADLmxi.webp" alt="KINGSTON SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/OzPL99SMTWElV6skxF7DnATTQC2XVnKrqpDFbvhu.webp" alt="KLINIK MEDIKA PUTRA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/rrFLB8H6RhcpF0227o7vBzUqRlqKT75hRgvEVrxC.webp" alt="ADITYA MEDICAL CENTRE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/MSeaefIwtfTL0nAMdEO9NZ5Xp7Vq9wOG9BtEUWOR.webp" alt="REHABILITASI AKUATIK" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/mat18SIbeFwqPRe9ucdPs8pFoTJXIgYeqXOuyFvn.webp" alt="BIZSQUARE SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/eiwOVocFxj3PKorU9MKOMbhVY3LVuPKrmlpfUNyp.webp" alt="MASOEM UNIVERSITY" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4j9y516P7jDhzBUgIaiJgy2cUCSb9fy8WVPBk9rU.webp" alt="SMK STRADA JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TAE0w1vCieSineXxobAMaBqVPGgQQBejoANl8Mr5.webp" alt="SMKN 8 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/ZzlKRYl4hNe50DT7jYFNNyD4LAvtPjunARrlVNKf.webp" alt="SMKN 6 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/Y0FQxEC85Wy2QPNMFtiCWmbjL91utb9g6OPzArV4.webp" alt="SMK AS-SYAFIIYAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/i5GoEq6CVAKk1KWSkdnwRF38um7bLETapTsxu658.webp" alt="SMKN 2 BALEENDAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/S7Oqhl9C0UBHq7GGIW6Px4AlqFMqLXMN3W0NJLbT.webp" alt="BUNDA MULIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/gaELWgz0y65vYH4vuTi3YKmG2a9tMtR6HSPWnFpr.webp" alt="KEBAB DHABI" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/16MRqsrd5RcnoGxD5yVPdgPD1eiGqoivzGNRwkjy.webp" alt="KARALIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                            </div>
+                    <div class="clients-marquee-group" aria-hidden="true">
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/IjequHH1frJCXWaEpDGrWyWkmoUJ4X6BJUADLmxi.webp" alt="KINGSTON SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/OzPL99SMTWElV6skxF7DnATTQC2XVnKrqpDFbvhu.webp" alt="KLINIK MEDIKA PUTRA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/rrFLB8H6RhcpF0227o7vBzUqRlqKT75hRgvEVrxC.webp" alt="ADITYA MEDICAL CENTRE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/MSeaefIwtfTL0nAMdEO9NZ5Xp7Vq9wOG9BtEUWOR.webp" alt="REHABILITASI AKUATIK" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/mat18SIbeFwqPRe9ucdPs8pFoTJXIgYeqXOuyFvn.webp" alt="BIZSQUARE SINGAPORE" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/eiwOVocFxj3PKorU9MKOMbhVY3LVuPKrmlpfUNyp.webp" alt="MASOEM UNIVERSITY" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/4j9y516P7jDhzBUgIaiJgy2cUCSb9fy8WVPBk9rU.webp" alt="SMK STRADA JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/TAE0w1vCieSineXxobAMaBqVPGgQQBejoANl8Mr5.webp" alt="SMKN 8 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/ZzlKRYl4hNe50DT7jYFNNyD4LAvtPjunARrlVNKf.webp" alt="SMKN 6 JAKARTA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/Y0FQxEC85Wy2QPNMFtiCWmbjL91utb9g6OPzArV4.webp" alt="SMK AS-SYAFIIYAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/i5GoEq6CVAKk1KWSkdnwRF38um7bLETapTsxu658.webp" alt="SMKN 2 BALEENDAH" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/S7Oqhl9C0UBHq7GGIW6Px4AlqFMqLXMN3W0NJLbT.webp" alt="BUNDA MULIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/gaELWgz0y65vYH4vuTi3YKmG2a9tMtR6HSPWnFpr.webp" alt="KEBAB DHABI" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                                    <div class="client-marquee-item">
+                                <div class="client-logo-card">
+                                    <img src="storage/clients/16MRqsrd5RcnoGxD5yVPdgPD1eiGqoivzGNRwkjy.webp" alt="KARALIA" class="client-logo-img" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="py-5 position-relative overflow-hidden">
+    <div class="container">
+        <div class="about-stats-card p-4 p-lg-5 rounded-4 position-relative">
+            <div class="row g-4 align-items-center divider-grid">
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item text-center text-lg-start px-2">
+                        <span class="display-5 fw-bold section-subtitle d-block">
+                            <span class="stat-number" data-target="100">0</span><span class="text-warning">+</span>
+                        </span>
+                        <span class="stat-label text-secondary x-small text-uppercase tracking-wider fw-semibold">Proyek Terselesaikan</span>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item text-center text-lg-start px-2">
+                        <span class="display-5 fw-bold section-subtitle d-block">
+                            <span class="stat-number" data-target="99">0</span><span class="text-warning">%</span>
+                        </span>
+                        <span class="stat-label text-secondary x-small text-uppercase tracking-wider fw-semibold">Kepuasan Klien</span>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item text-center text-lg-start px-2">
+                        <span class="display-5 fw-bold section-subtitle d-block">
+                            <span class="stat-number" data-target="13">0</span><span class="text-warning">+</span>
+                        </span>
+                        <span class="stat-label text-secondary x-small text-uppercase tracking-wider fw-semibold">Tahun Pengalaman</span>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item text-center text-lg-start px-2">
+                        <span class="display-5 fw-bold section-subtitle d-block">
+                            <span>24</span><span class="text-warning">/7</span>
+                        </span>
+                        <span class="stat-label text-secondary x-small text-uppercase tracking-wider fw-semibold">Dukungan Teknis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="cta-section py-section text-center position-relative overflow-hidden has-top-divider" id="contact">
+        <div class="diagonal-divider-top"></div>
+
+        <div class="cta-bg-glow glow-1"></div>
+        <div class="cta-bg-glow glow-2"></div>
+        <div class="cta-grid-pattern"></div>
+
+        <div class="container position-relative z-2">
+            <h2 class="cta-headline mb-4">
+                PUNYA IDE BISNIS ONLINE?<br>
+                <span class="accent-text">MARI KITA WUJUDKAN.</span>
+            </h2>
+            <p class="cta-subtext mx-auto mb-5">
+                Konsultasikan kebutuhan Anda bersama penyedia jasa website terbaik. Kami siap membantu mentransformasi ide Anda menjadi produk digital yang bernilai tinggi.
+            </p>
+            <a href="https://wa.me/6282299009615" target="_blank" rel="noopener" class="btn btn-rubic-cta btn-lg magnetic-btn">
+                <span>KONSULTASI GRATIS &rarr;</span>
+            </a>
+        </div>
+        <div class="diagonal-divider divider-right"></div>
+    </section>
+
+    </main>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const btns = document.querySelectorAll('.port-filter-btn');
+        const items = document.querySelectorAll('.port-item');
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                btns.forEach(function (b) {
+                    b.classList.remove('btn-dark', 'active');
+                    b.classList.add('btn-outline-secondary');
+                });
+                btn.classList.remove('btn-outline-secondary');
+                btn.classList.add('btn-dark', 'active');
+                const cat = btn.dataset.portFilter;
+                items.forEach(function (el) {
+                    el.classList.toggle('d-none', cat !== 'all' && el.dataset.category !== cat);
+                });
+            });
+        });
+    });
+    </script>
+    <footer class="footer py-5 position-relative overflow-hidden">
+        <div class="footer-pattern"></div>
+
+        <div class="container position-relative z-2">
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="footer-logo d-inline-block mb-3" href="index.html">
+                        <img src="assets/img/logo-black.webp" alt="jasa-website-profesional" height="60" loading="lazy" decoding="async">
+                    </a>
+                    <p class="footer-desc">Solusi jasa pembuatan website terbaik dan pengalaman digital profesional untuk bisnis Anda.</p>
+
+                    <a href="https://pse.komdigi.go.id/pse" target="_blank" rel="noopener" class="komdigi-badge d-inline-flex align-items-center gap-2 mt-2 px-3 py-2 rounded-3 text-decoration-none">
+                        <img src="assets/img/komdigi.webp" alt="rubicweb-web-developer-resmi-terdaftar-di-komdigi" class="komdigi-logo" height="28" loading="lazy" decoding="async" />
+                        <div class="d-flex flex-column">
+                            <span class="komdigi-label">Terdaftar Resmi di</span>
+                            <span class="komdigi-name">KOMDIGI</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="footer-heading">Solusi Digital</h4>
+                    <ul class="list-unstyled footer-links">
+                                                    <li><a href="seo-terbaik-se-indonesia.html">SEO &amp; Digital Marketing</a></li>
+                                                    <li><a href="#">Pengembangan AI</a></li>
+                                                    <li><a href="#">Otomasi Bisnis</a></li>
+                                            </ul>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h4 class="footer-heading">Jasa Website Profesional</h4>
+                    <ul class="list-unstyled footer-links">
+                                                    <li><a href="#">Website Company Profile</a></li>
+                                                    <li><a href="#">Website Toko Online</a></li>
+                                                    <li><a href="#">Website E-Commerce</a></li>
+                                                    <li><a href="#">Aplikasi Kasir / POS</a></li>
+                                                    <li><a href="#">Aplikasi Online Booking</a></li>
+                                                    <li><a href="#">Aplikasi Resto</a></li>
+                                            </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h4 class="footer-heading">Meeting Office</h4>
+
+                    <p class="mb-1 d-flex align-items-start gap-2">
+                        <i class='bx bxs-map accent-text mt-1'></i>
+                        <span>Bellezza BSA (Belleza Shopping Arcade), Lantai 1 Unit 106, Permata Hijau, Jakarta Selatan 12210</span>
+                    </p>
+
+                    <div class="footer-links mt-3 d-flex gap-2">
+                        <a href="#" aria-label="Instagram" class="footer-social-icon"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="LinkedIn" class="footer-social-icon"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" aria-label="Facebook" class="footer-social-icon"><i class='bx bxl-facebook'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <p class="mb-0 small-text">&copy; 2026 PT. Rubic Kirana Solusindo. Hak Cipta Dilindungi.</p>
+                <button id="scrollTopBtn" class="btn-back-to-top" aria-label="Kembali ke atas">
+                    Kembali ke atas &uarr;
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6282299009615" class="wa-pill-btn magnetic-btn" target="_blank" rel="noopener" aria-label="Hubungi kami melalui WhatsApp">
+        <i class='bx bxl-whatsapp wa-icon'></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
+    <script src="assets/js/liquid.js?v=2"></script>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/template.js?v=3"></script>
+</body>
+</html>

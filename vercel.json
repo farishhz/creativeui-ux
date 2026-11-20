@@ -1,5 +1,11 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/jasa/seo-terbaik-se-indonesia",
+      "destination": "/seo-terbaik-se-indonesia.html"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(css|js)/(.*)",

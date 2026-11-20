@@ -4487,6 +4487,19 @@ html.lenis, html.lenis body {
   padding-bottom: 0;
 }
 
+.misi-icon-clean {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(17, 17, 17, 0.05);
+  color: #111111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
 .value-pillar-item {
   padding-top: 24px;
   border-top: 2px solid rgba(0, 0, 0, 0.1);
@@ -4594,6 +4607,11 @@ html.lenis, html.lenis body {
 .pricing-slanted-section {
   padding-top: calc(var(--divider-height) + 4rem) !important;
   padding-bottom: calc(var(--divider-height) + 4rem) !important;
+}
+
+.cta-section.has-top-divider {
+  padding-top: calc(var(--divider-height) + 4.5rem) !important;
+  padding-bottom: calc(var(--divider-height) + 4.5rem) !important;
 }
 
 @media (max-width: 400px) {
